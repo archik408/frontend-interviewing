@@ -31,7 +31,7 @@ function removeDuplicates2(text = '') {
 }
 
 // hacky
-function removeDuplicates(text = '') {
+function removeDuplicates3(text = '') {
   // have no rules about '.', ',' and etc. (including double space) just skip this cases
   return Array.from(new Set(text.split(' '))).join(' ');
 }
