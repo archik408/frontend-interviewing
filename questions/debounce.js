@@ -1,6 +1,21 @@
 // Implement debounce
 
-    const debounce = function(ff, delay) {
+
+    const debounce = function(fun, delay) {
+      let timer = null;
+
+      return (...args) => {
+        if (timer) {
+          clearTimeout(timer);  
+          timer = setTimeout(() => {
+            fun(...args);
+            timer = null;
+          }, delay);
+        }
+      }
+    }
+
+    const debounceX = function(ff, delay) {
       let working = false;
 
       return (...args) => {
